@@ -10,17 +10,13 @@ div, h1, h2, h3, h4, h5, h6, span, ul, li, p, a {
 	padding: 0 0 15px 0;
 }
 
+h1 {
+	padding: 0 0 20px 0;
+}
+
 ul {
 	list-style: none;
 }
-
-// label {
-//	margin: 0 25px 0 25px;
-// }
-
-//.formcontrol {
-//	width: 400px;
-//}
 
 .spacer {
 	font-size: 0; 

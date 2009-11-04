@@ -6,6 +6,8 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :address1
       t.string :address2
       t.string :address3
+      t.string :city
+      t.string :postcode
       t.string :email
       t.string :website
       t.string :phone

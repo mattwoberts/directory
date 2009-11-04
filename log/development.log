@@ -130,3 +130,189 @@ Rendering template within layouts/application
 Rendering companies/new
 Rendered companies/_form (18.8ms)
 Completed in 26ms (View: 20, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2009-11-04 23:25:15) [GET]
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (22.0ms)
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2009-11-04 23:27:53) [POST]
+  Parameters: {"company"=>{"address1"=>"6 Stanley Av", "name"=>"John", "address2"=>"Penwortham", "address3"=>"Preston", "approved"=>"0", "fax"=>"01772 6409784", "phone"=>"01772740839", "website"=>"http://john.com", "description"=>"My Company", "lat"=>"", "long"=>"", "email"=>"john@giddygoat.co.uk"}, "commit"=>"Create Company", "authenticity_token"=>"LVaWLjsb1RSGn53ufzDsu9eNmAf2qTsgjfEdfZYks7g="}
+  [4;36;1mCompany Create (0.5ms)[0m   [0;1mINSERT INTO "companies" ("name", "address1", "address2", "created_at", "address3", "updated_at", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('John', '6 Stanley Av', 'Penwortham', '2009-11-04 23:27:53', 'Preston', '2009-11-04 23:27:53', 'f', 'http://john.com', '01772740839', '01772 6409784', 'My Company', '', 'john@giddygoat.co.uk', '')[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2009-11-04 23:27:53) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2009-11-04 23:29:25) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, index, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2009-11-04 23:30:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2009-11-04 23:31:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 2) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Company with ID=2):
+  app/controllers/companies_controller.rb:22:in `show'
+
+Rendered rescues/_trace (99.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2009-11-04 23:31:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2009-11-04 23:31:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2009-11-04 23:31:29) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering companies/edit
+
+ActionView::TemplateError (undefined method `include?' for :form:Symbol) on line #1 of app/views/companies/edit.erb:
+1: <%= render :form %>
+
+    app/views/companies/edit.erb:1
+
+Rendered rescues/_trace (110.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2009-11-04 23:31:47) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering companies/edit
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/companies/_form.erb:
+1: <% semantic_form_for @company do |f| %>
+2: 	<%= f.inputs %>
+3: 	<%= f.buttons %>
+4: <% end %>
+
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1397:in `semantic_form_for'
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1356:in `use_custom_field_error_proc'
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1396:in `semantic_form_for'
+    app/views/companies/_form.erb:1
+    app/views/companies/edit.erb:1
+
+Rendered rescues/_trace (56.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2009-11-04 23:34:28) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering companies/edit
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/companies/_form.erb:
+1: <% semantic_form_for @company do |f| %>
+2: 	<%= f.inputs %>
+3: 	<%= f.buttons %>
+4: <% end %>
+
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1397:in `semantic_form_for'
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1356:in `use_custom_field_error_proc'
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1396:in `semantic_form_for'
+    app/views/companies/_form.erb:1
+    app/views/companies/edit.erb:1
+
+Rendered rescues/_trace (121.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2009-11-04 23:34:34) [GET]
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/companies]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2009-11-04 23:34:41) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering companies/edit
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/companies/_form.erb:
+1: <% semantic_form_for @company do |f| %>
+2: 	<%= f.inputs %>
+3: 	<%= f.buttons %>
+4: <% end %>
+
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1397:in `semantic_form_for'
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1356:in `use_custom_field_error_proc'
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1396:in `semantic_form_for'
+    app/views/companies/_form.erb:1
+    app/views/companies/edit.erb:1
+
+Rendered rescues/_trace (119.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2009-11-04 23:35:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+DEPRECATION WARNING: Formtastic I18n: Key 'formtastic.save' is now deprecated in favor 'formtastic.update'.. (called from commit_button at /Users/john/rails/directory/vendor/gems/formtastic-0.9.1/rails/../lib/formtastic.rb:306)
+Rendered companies/_form (19.3ms)
+Completed in 27ms (View: 21, DB: 0) | 200 OK [http://localhost/companies/edit/1]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2009-11-04 23:36:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+DEPRECATION WARNING: Formtastic I18n: Key 'formtastic.save' is now deprecated in favor 'formtastic.update'.. (called from commit_button at /Users/john/rails/directory/vendor/gems/formtastic-0.9.1/rails/../lib/formtastic.rb:306)
+Rendered companies/_form (18.9ms)
+Completed in 31ms (View: 24, DB: 0) | 200 OK [http://localhost/companies/edit/1]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2009-11-04 23:37:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+DEPRECATION WARNING: Formtastic I18n: Key 'formtastic.save' is now deprecated in favor 'formtastic.update'.. (called from commit_button at /Users/john/rails/directory/vendor/gems/formtastic-0.9.1/rails/../lib/formtastic.rb:306)
+Rendered companies/_form (19.0ms)
+Completed in 27ms (View: 21, DB: 0) | 200 OK [http://localhost/companies/edit/1]
