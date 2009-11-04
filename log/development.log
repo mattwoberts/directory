@@ -316,3 +316,64 @@ Rendering companies/edit
 DEPRECATION WARNING: Formtastic I18n: Key 'formtastic.save' is now deprecated in favor 'formtastic.update'.. (called from commit_button at /Users/john/rails/directory/vendor/gems/formtastic-0.9.1/rails/../lib/formtastic.rb:306)
 Rendered companies/_form (19.0ms)
 Completed in 27ms (View: 21, DB: 0) | 200 OK [http://localhost/companies/edit/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCompanies (20091104223630)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDROP TABLE "companies"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20091104223630'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCompanies (20091104223630)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "address1" varchar(255), "address2" varchar(255), "address3" varchar(255), "city" varchar(255), "county" varchar(255), "postcode" varchar(255), "email" varchar(255), "website" varchar(255), "phone" varchar(255), "fax" varchar(255), "lat" varchar(255), "long" varchar(255), "approved" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091104223630')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2009-11-04 23:45:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCompany Load (0.1ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Company with ID=1):
+  app/controllers/companies_controller.rb:26:in `edit'
+
+Rendered rescues/_trace (101.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2009-11-04 23:46:06) [GET]
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (22.0ms)
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/companies/new]
