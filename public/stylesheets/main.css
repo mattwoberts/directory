@@ -1,0 +1,63 @@
+/* CSS Document */
+body {
+	font:normal 13px/20px Arial, Helvetica, sans-serif; text-decoration:none;
+	margin:0; 
+	padding:0;
+}
+
+div, h1, h2, h3, h4, h5, h6, span, ul, li, p, a {
+	margin: 0; 
+	padding: 0 0 15px 0;
+}
+
+ul {
+	list-style: none;
+}
+
+// label {
+//	margin: 0 25px 0 25px;
+// }
+
+//.formcontrol {
+//	width: 400px;
+//}
+
+.spacer {
+	font-size: 0; 
+	line-height: 0; 
+	clear: both;
+}
+
+div.row {
+  clear: both;
+}
+
+div.row span.label {
+	float: left;
+	width: 100px;
+	text-align: right;
+}
+
+div.row span.formw {
+  float: right;
+  width: 600px;
+  text-align: left;
+}
+
+#header {
+	width: 100%;
+	height: 60px;
+	background-color: #3F3F3F;
+}
+
+#main {
+	width: 750px;
+	margin: auto;
+	padding: 25px 0 15px 0;
+}
+
+#footer {
+	width:100%;
+	height:120px;
+	background-color: #3F3F3F;
+}

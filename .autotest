@@ -1,0 +1,19 @@
+require 'autotest/growl'
+require 'autotest/fsevent'
+
+module Autotest::Growl
+  def self.growl title, msg, img, pri=0, stick=""
+    system "growlnotify -n autotest --image #{img} -p #{pri} -m '#{msg}' #{title} #{stick}"
+  end
+ 
+  Autotest.add_hook :red do |at|
+    errors = at.files_to_test.map { |k, v| "#{k}:\n #{v.join("\n ")}"}.join("\n\n")
+    #failed_tests = at.files_to_test.inject(0){ |s,a| k,v = a; s + v.size}
+    growl "Tests failed:", "#{errors}", '~/library/autotest/rails_fail.png', 2
+  end
+ 
+  Autotest.add_hook :green do |at|
+    res = at.results.scan(/Finished.*failures/m).to_s.gsub(/\e\[32m/,'')
+    growl "Test Results", "#{res}", '~/library/autotest/rails_ok.png'
+  end
+end

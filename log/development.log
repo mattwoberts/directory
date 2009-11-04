@@ -1,0 +1,132 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCompanies (20091104223630)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "address1" varchar(255), "address2" varchar(255), "address3" varchar(255), "email" varchar(255), "website" varchar(255), "phone" varchar(255), "fax" varchar(255), "lat" varchar(255), "long" varchar(255), "approved" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091104223630')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("companies")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "address1" varchar(255), "address2" varchar(255), "address3" varchar(255), "email" varchar(255), "website" varchar(255), "phone" varchar(255), "fax" varchar(255), "lat" varchar(255), "long" varchar(255), "approved" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091104223630')[0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2009-11-04 22:50:14) [GET]
+Rendering companies/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/companies]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2009-11-04 22:50:42) [GET]
+Rendering companies/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/companies/index]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2009-11-04 22:53:44) [GET]
+Rendering companies/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/companies/index]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2009-11-04 22:54:26) [GET]
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/companies/index]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2009-11-04 23:12:54) [GET]
+Rendering template within layouts/application
+Rendering companies/new
+
+ActionView::TemplateError (undefined method `include?' for :form:Symbol) on line #1 of app/views/companies/new.erb:
+1: <%= render :form %>
+
+    app/views/companies/new.erb:1
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2009-11-04 23:13:17) [GET]
+Rendering template within layouts/application
+Rendering companies/new
+
+ActionView::TemplateError (undefined method `companies_path' for #<ActionView::Base:0x10435a020>) on line #1 of app/views/companies/_form.erb:
+1: <% semantic_form_for @company do |f| %>
+2: 	<%= f.inputs %>
+3: 	<%= f.buttons %>
+4: <% end %>
+
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1397:in `semantic_form_for'
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1356:in `use_custom_field_error_proc'
+    formtastic (0.9.1) [v] rails/./lib/formtastic.rb:1396:in `semantic_form_for'
+    app/views/companies/_form.erb:1
+    app/views/companies/new.erb:1
+
+Rendered rescues/_trace (124.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2009-11-04 23:14:51) [GET]
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (53.5ms)
+Completed in 61ms (View: 56, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2009-11-04 23:18:25) [GET]
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (19.3ms)
+Completed in 31ms (View: 26, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2009-11-04 23:20:32) [GET]
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (17.3ms)
+Completed in 25ms (View: 19, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2009-11-04 23:21:12) [GET]
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (18.8ms)
+Completed in 26ms (View: 20, DB: 0) | 200 OK [http://localhost/companies/new]
