@@ -16,7 +16,6 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :lat
       t.string :long
       t.boolean :approved
-
       t.timestamps
     end
   end
