@@ -108,3 +108,63 @@ Migrating to CreateCompanies (20091104223630)
   [4;35;1mCompany Create (0.4ms)[0m   [0mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-09 20:48:09', NULL, '123 IUY', '2009-11-09 20:48:09', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'valid.email@address.com', NULL)[0m
   [4;36;1mCompany Create (0.8ms)[0m   [0;1mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-10 17:56:49', NULL, '123 IUY', '2009-11-10 17:56:49', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'john1.harkins@example.com', NULL)[0m
   [4;35;1mCompany Create (0.4ms)[0m   [0mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-10 17:56:49', NULL, '123 IUY', '2009-11-10 17:56:49', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'john2.harkins@example.com', NULL)[0m
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-11 15:13:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://test.host/companies/1]
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-11 15:13:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/companies/1]
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-11 15:13:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/companies/1]
+  [4;35;1mCompany Create (0.4ms)[0m   [0mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-11 15:13:49', NULL, '123 IUY', '2009-11-11 15:13:49', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'john1.harkins@example.com', NULL)[0m
+  [4;36;1mCompany Create (0.3ms)[0m   [0;1mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-11 15:13:49', NULL, '123 IUY', '2009-11-11 15:13:49', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'john2.harkins@example.com', NULL)[0m
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-12 11:28:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.1ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-12 11:28:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-12 11:28:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;35;1mCompany Create (0.5ms)[0m   [0mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-12 11:28:37', NULL, '123 IUY', '2009-11-12 11:28:37', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'john1.harkins@example.com', NULL)[0m
+  [4;36;1mCompany Create (0.4ms)[0m   [0;1mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-12 11:28:37', NULL, '123 IUY', '2009-11-12 11:28:37', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'john2.harkins@example.com', NULL)[0m
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-12 11:29:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.1ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-12 11:29:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+
+
+Processing CompaniesController#show (for 0.0.0.0 at 2009-11-12 11:29:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;35;1mCompany Create (0.5ms)[0m   [0mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-12 11:29:19', NULL, '123 IUY', '2009-11-12 11:29:19', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'john1.harkins@example.com', NULL)[0m
+  [4;36;1mCompany Create (0.5ms)[0m   [0;1mINSERT INTO "companies" ("name", "address1", "city", "address2", "created_at", "address3", "postcode", "updated_at", "county", "approved", "website", "phone", "fax", "description", "lat", "email", "long") VALUES('company name', '123 four five six', 'Bognor Regis', NULL, '2009-11-12 11:29:20', NULL, '123 IUY', '2009-11-12 11:29:20', 'Lancishuure', NULL, NULL, '01111 223344', NULL, 'Company description', NULL, 'john2.harkins@example.com', NULL)[0m
