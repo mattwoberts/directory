@@ -16,7 +16,7 @@ class CategoryTest < ActiveSupport::TestCase
     
     should "fail when name is longer than 30 chars" do
       @category.name = "0123456789012345678901234567891"
-      
+      assert !@category.valid?
     end
   end
   
