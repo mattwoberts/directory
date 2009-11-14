@@ -9,4 +9,5 @@ describe Company do
     @company_attributes = Factory.attributes_for(:company)
     Company.create!(@company_attributes)
   end
+  
 end
