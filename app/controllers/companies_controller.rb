@@ -36,4 +36,10 @@ class CompaniesController < ApplicationController
     end
   end
   
+  def destroy
+    @company = Company.find(params[:id])
+    @company.destroy
+    redirect_to(companies_url)
+  end
+    
 end
