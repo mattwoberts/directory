@@ -10,7 +10,7 @@ Factory.define :company do |f|
 end
 
 Factory.define :category do |f|
-  f.sequence(:name) {|n| "Category {n}"}
+  f.sequence(:name) {|n| "Category #{n}"}
 end
 
 

@@ -8,7 +8,12 @@ describe Company do
 
   it "should create a new instance given valid attributes" do
     @company_attributes = Factory.attributes_for(:company)
-    Company.create!(@company_attributes)
+    @company_from_attributes = Company.create!(@company_attributes)
+    @company_from_attributes.should be_valid
+  end
+  
+  it "should be valid" do
+    @company.should be_valid
   end
     
   it { should validate_presence_of(:name) }
@@ -19,5 +24,10 @@ describe Company do
   it { should validate_presence_of(:postcode) }
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:phone) }
+  
+  it "should validate maximum length of :name is 30" do
+    @company.name = "1234567890123456789012345678901"
+    @company.should_not be_valid
+  end
   
 end
