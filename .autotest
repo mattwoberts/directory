@@ -9,11 +9,11 @@ module Autotest::Growl
   Autotest.add_hook :red do |at|
     errors = at.files_to_test.map { |k, v| "#{k}:\n #{v.join("\n ")}"}.join("\n\n")
     #failed_tests = at.files_to_test.inject(0){ |s,a| k,v = a; s + v.size}
-    growl "Tests failed:", "#{errors}", '~/library/autotest/rails_fail.png', 2
+    growl "Tests failed:", "#{errors}", 'public/images/rails_fail.png', 2
   end
  
   Autotest.add_hook :green do |at|
     res = at.results.scan(/Finished.*failures/m).to_s.gsub(/\e\[32m/,'')
-    growl "Test Results", "#{res}", '~/library/autotest/rails_ok.png'
+    growl "Test Results", "#{res}", 'public/images/rails_ok.png'
   end
 end
