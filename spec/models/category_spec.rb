@@ -17,10 +17,11 @@ describe Category do
   end
     
   it { should validate_presence_of(:name) }
+  it { should have_many(:companies) }
   
   it "should validate maximum length of :name is 30" do
     @category.name = "1234567890123456789012345678901"
     @category.should_not be_valid
   end
-  
+    
 end
